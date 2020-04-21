@@ -2,7 +2,6 @@
 #include <bitset>
 #include <cassert>
 #include <chrono>
-#include <climits>
 #include <cstring>
 #include <iomanip>
 #include <iostream>
@@ -21,7 +20,24 @@ typedef vector<vector<ll>> matrix;
 typedef pair<ll, ll> pll;
 
 void solve() {
-
+    int n;
+    cin >> n;
+    if (n % 4 == 2) {
+        cout << "NO" << endl;
+        return;
+    } else {
+        cout << "YES" << endl;
+    }
+    int total = 0;
+    for (int i = 1; i <= n / 2; i++) {
+        cout << 2 * i << " "; 
+        total += 2 * i;
+    }
+    for (int i = 1; i < n / 2; i++) {
+        cout << 2 * i - 1 << " ";
+        total -= 2 * i - 1;
+    }
+    cout << total << endl;
 }
 
 int main() {
@@ -31,7 +47,6 @@ int main() {
     int t;
     cin >> t;
     for (int i = 1; i <= t; ++i) {
-        cout << "Case #" << i << ": ";
         solve();     
     }
 }
